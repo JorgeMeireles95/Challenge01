@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "tb_videos")
@@ -16,9 +17,11 @@ public class Video {
 	@Column(name = "id")
 	private Long videoId;
 
+	@NotEmpty
 	private String titulo;
-
+	@NotEmpty
 	private String descricao;
+	@NotEmpty
 	private String url;
 	
 	

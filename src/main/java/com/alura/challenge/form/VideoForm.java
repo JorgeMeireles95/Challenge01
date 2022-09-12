@@ -1,19 +1,19 @@
 package com.alura.challenge.form; //recebendo informação do cliente
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.alura.challenge.entities.Video;
 
 public class VideoForm {
-	@NotBlank
-	@NotEmpty
+	
+	@NotNull @NotEmpty
 	private String titulo;
-	@NotBlank
-	@NotEmpty
+	
+	@NotNull @NotEmpty
 	private String descricao;
-	@NotBlank
-	@NotEmpty
+	
+	@NotNull @NotEmpty
 	private String url;
 
 	public String getTitulo() {
