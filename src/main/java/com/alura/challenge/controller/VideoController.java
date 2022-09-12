@@ -4,8 +4,11 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +30,7 @@ public class VideoController {
 	private VideoRepository repository;
 
 	@PostMapping
-	public ResponseEntity<VideoDto> cadastrar(@RequestBody VideoForm form,UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<VideoDto> cadastrar(@RequestBody @Valid VideoForm form,UriComponentsBuilder uriBuilder) {
 		Video video = form.converter();
 		repository.save(video);
 		URI uri = uriBuilder.path("/videos/{id}").buildAndExpand(video.getvideoId()).toUri();
