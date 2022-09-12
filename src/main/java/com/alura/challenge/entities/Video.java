@@ -7,14 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.lang.Nullable;
-
 @Entity
 @Table(name = "tb_videos")
 public class Video {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Long videoId;
 
@@ -22,6 +20,19 @@ public class Video {
 
 	private String descricao;
 	private String url;
+	
+	
+	
+	public Video(String titulo, String descricao, String url) {
+		super();
+		this.titulo = titulo;
+		this.descricao = descricao;
+		this.url = url;
+	}
+
+	public Video() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getvideoId() {
 		return videoId;
