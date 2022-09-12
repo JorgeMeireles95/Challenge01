@@ -2,6 +2,8 @@ package com.alura.challenge.form; //recebendo informação do cliente
 
 import com.alura.challenge.entities.Video;
 
+
+
 public class VideoForm {
 	
 	private String titulo;
